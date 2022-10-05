@@ -13,6 +13,8 @@ A tool that can be deployed to process posting and receiving text and audio file
 ## Directory Structure
 
 ```bash
+├── .github/workflows
+│   └── main.yml
 ├── airflow
 │   ├── file1.ext
 │   └── file2.ext
