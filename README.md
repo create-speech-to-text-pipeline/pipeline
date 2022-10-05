@@ -11,6 +11,35 @@ A tool that can be deployed to process posting and receiving text and audio file
 ![Pipeline Diagram](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
 ## Directory Structure
+
+```bash
+├── airflow
+│   ├── file1.ext
+│   └── file2.ext
+├── backend
+│   ├── file3.ext
+│   ├── file4.ext
+│   └── file5.ext
+├── frontend
+│   ├── file6.ext
+│   └── file7.ext
+├── logging
+│   ├── file8.ext
+│   ├── file9.ext
+│   └── file10.ext
+├── screenshots
+│   ├── file11.ext
+│   └── file12.ext
+├── testing
+│   ├── file13.ext
+│   ├── file14.ext
+│   └── file15.ext
+├── .gitignore
+├── EDA.ipynb
+├── LICENSE
+├── README.md
+└── requirements.txt
+```
 ## Run Locally
 
 Clone the project
