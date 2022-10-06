@@ -1,6 +1,4 @@
-
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
-
+![Logo](./img/logo.png)
 
 # Speech-to-Text Data Collection
 
@@ -8,40 +6,73 @@ A tool that can be deployed to process posting and receiving text and audio file
 
 ## Data Capture Pipeline
 
-![Pipeline Diagram](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Pipeline Diagram](./img/pipelineDiagram.png)
 
 ## Directory Structure
 
 ```bash
-├── .github/workflows
-│   └── main.yml
+.
 ├── airflow
-│   ├── file1.ext
-│   └── file2.ext
+│   ├── dags
+│   │   ├── extract_load.py
+│   │   └── scripts
+│   │       ├── dataloader.py
+│   │       ├── db_connection.py
+│   │       ├── __init__.py
+│   │       └── schema
+│   │           └── amharicnews.sql
+│   ├── data
+│   │   └── AmharicNewsDataset.csv
+│   ├── docker-compose.yaml
+│   └── logs
+│       └── scheduler
+│           └── latest -> /opt/airflow/logs/scheduler/2022-10-05
 ├── backend
-│   ├── file3.ext
-│   ├── file4.ext
-│   └── file5.ext
+│   └── dummy.txt
 ├── frontend
-│   ├── file6.ext
-│   └── file7.ext
-├── logging
-│   ├── file8.ext
-│   ├── file9.ext
-│   └── file10.ext
-├── screenshots
-│   ├── file11.ext
-│   └── file12.ext
-├── testing
-│   ├── file13.ext
-│   ├── file14.ext
-│   └── file15.ext
-├── .gitignore
-├── EDA.ipynb
+│   ├── dummy.txt
+│   ├── frontend
+│   │   ├── package.json
+│   │   ├── package-lock.json
+│   │   ├── public
+│   │   │   ├── favicon.ico
+│   │   │   ├── index.html
+│   │   │   ├── logo192.png
+│   │   │   ├── logo512.png
+│   │   │   ├── manifest.json
+│   │   │   └── robots.txt
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── App.css
+│   │       ├── App.js
+│   │       ├── App.test.js
+│   │       ├── index.css
+│   │       ├── index.js
+│   │       ├── logo.svg
+│   │       ├── reportWebVitals.js
+│   │       └── setupTests.js
+│   └── proto.png
+├── img
+│   ├── logo.png
+│   └── pipelineDiagram.png
 ├── LICENSE
+├── logging
+│   └── dummy.txt
+├── notebook
+│   └── Amharic_news_Classification.ipynb
 ├── README.md
-└── requirements.txt
+├── requirements.txt
+├── screenshots
+│   ├── airflowscreenshoot.png
+│   └── design diagram.png
+└── testing
+    ├── dummy.txt
+    └── test_dataloading.py
+
+17 directories, 39 files
+
 ```
+
 ## Run Locally
 
 Clone the project
@@ -68,11 +99,9 @@ Set up pipeline
   python3 setup.py
 ```
 
-
 ## Screenshots
 
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
 
 ## Authors
 
@@ -83,6 +112,3 @@ Set up pipeline
 - [Patrick](https://github.com/prubayita)
 - [Wangui](https://github.com/akrobi)
 - [Yonas](https://github.com/yonamg)
-
-
-
