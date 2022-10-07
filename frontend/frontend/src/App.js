@@ -1,13 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Navbar from "./components/index";
 
-function App() {
-  return (
-    <div className="App">
-      <h6>cirtificate Name</h6>
-       <input type= 'pup-key' onChange={pupkey}></input>
-          </div>
-  );
+class App extends React.Component {
+  render() {
+    return <Navbar />;
+  }
 }
 
 export default App;
