@@ -7,6 +7,7 @@ import boto3
 from botocore.exceptions import ClientError
 from scipy.io.wavfile import read
 
+
 class AudioToArray():
     def __init__(self) -> None:
         pass
@@ -15,7 +16,7 @@ class AudioToArray():
         for filename in glob.glob(path + "wav/*.wav"):
             wavs.append(read(filename))
         return wavs
-    def upload_ndarray(file_name: str, bucket: str, object_name=None):
+    def upload_ndarray(file_name: str, bucket='/mnt/10ac-batch-6/bucket/', object_name=None):
         if object_name is None:
             object_name = os.path.basename(file_name)        
         s3_client = boto3.client('s3')
