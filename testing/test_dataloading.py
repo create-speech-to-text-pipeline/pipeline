@@ -1,6 +1,5 @@
 import unittest
 import sys, os
-import dvc.api
 import io
 import pandas as pd
 sys.path.append(os.path.abspath(os.path.join('../airflow/dags')))
