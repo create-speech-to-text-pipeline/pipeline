@@ -33,4 +33,4 @@ jobs:
       - name: run testing
         run: |
           cd testing
-          python -m unittest discover
+          python test_dataloading.py
