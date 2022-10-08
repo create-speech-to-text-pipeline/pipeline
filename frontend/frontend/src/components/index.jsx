@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { FaMicrophone } from "react-icons/fa";
 import {BiChevronDown} from "react-icons/bi";
-// import {BsMic} from "react-icons/bi";
+import {FaStopCircle} from "react-icons/fa";
+import { ReactMediaRecorder } from "react-media-recorder";
 
 function Dropdown() {
-
+  
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="">    
@@ -34,7 +35,18 @@ function Dropdown() {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas libero laudantium non asperiores pariatur iusto consequatur provident! Maiores ut, officia non minus, quaerat quidem voluptatibus at reiciendis, voluptates molestiae ullam?
               </p>
               <div className="place-items-center">
-              <button className="bg-blue-600 rounded-full text-gray-300 hover:bg-gray-300 hover:text-blue-600 text-sm px-4 py-2.5 text-center"><FaMicrophone size={30}/></button>
+                
+                <ReactMediaRecorder 
+                  audio
+                  render={({ status, startRecording, stopRecording, mediaBlobUrl }) => (
+                    <div>
+                      <p>{status}</p>
+                      <button onClick={startRecording} className="bg-blue-600 rounded-full text-gray-300 hover:bg-gray-300 hover:text-blue-600 text-sm px-4 py-2.5 text-center"><FaMicrophone size={20}/></button>
+                      <button onClick={stopRecording} className="bg-red-600 rounded-full text-gray-300 hover:bg-gray-300 hover:text-red-600 text-sm px-4 py-2.5 text-center"><FaStopCircle size={20}/></button>
+                      <video src={mediaBlobUrl} controls autoPlay loop />
+                    </div>
+                  )} 
+                />
               </div>
                <p> </p>
             </div>
@@ -44,5 +56,6 @@ function Dropdown() {
       
     </div>
   );
+
 }
 export default Dropdown;
