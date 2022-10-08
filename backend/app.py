@@ -4,18 +4,18 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-def get_category(num):
-    if (num == "1"):
+def get_category(category):
+    if (category == "localnews"):
         return "'ሀገር አቀፍ ዜና'"
-    elif (num == "2"):
+    elif (category == "sport"):
         return "'ስፖርት'"
-    elif (num == "3"):
+    elif (category == "poletics"):
         return "'ፖለቲካ'"
-    elif (num == "4"):
+    elif (category == "entertiement"):
         return "'መዝናኛ'"
-    elif (num == "5"):
+    elif (category == "5"):
         return "'ዓለም አቀፍ ዜና'"
-    elif (num == "6"):
+    elif (category == "business"):
         return "'ቢዝነስ'"
 
 @app.route('/news/<category>', methods =['GET'])
