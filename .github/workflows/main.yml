@@ -32,5 +32,6 @@ jobs:
       # Runs testing: checks to see if the run clears the unittests
       - name: run testing
         run: |
+          pip install -r requirements.txt
           cd testing
-          python -m unittest discover
+          python test_dataloading.py
