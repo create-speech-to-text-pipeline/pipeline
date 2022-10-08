@@ -1,5 +1,5 @@
 from kafka import KafkaProducer
-from kafka.errors import KafkaError
+#from kafka.errors import KafkaError
 
 import logging
 
