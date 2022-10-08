@@ -1,6 +1,5 @@
 from kafka import KafkaConsumer
 from kafka.structs import TopicPartition
-import json
 
 # To consume latest messages and auto-commit offsets
 class KConsumerClass():
