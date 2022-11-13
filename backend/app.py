@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify, make_response
 from persistence import Persistence
 from flask_cors import CORS
+from kafka import KafkaProducer
+from consume import consume
 app = Flask(__name__)
 CORS(app)
 
@@ -13,7 +15,7 @@ def get_category(category):
         return "'ፖለቲካ'"
     elif (category == "entertiement"):
         return "'መዝናኛ'"
-    elif (category == "5"):
+    elif (category == "internationalnews"):
         return "'ዓለም አቀፍ ዜና'"
     elif (category == "business"):
         return "'ቢዝነስ'"
@@ -28,6 +30,14 @@ def getNews(category):
         'headline': news[1]
     }
     return jsonify({'news': output})
+
+@app.route('/produce', methods =['POST'])
+def login():
+    #data =  request.json
+    producer = KafkaProducer(bootstrap_servers='localhost:9092')
+    producer.send('quickstart-events', b'Hello from flask')
+    consume()
+    return jsonify({'status': "ok"})
 
 if __name__ == "__main__":
 	app.run(debug = True)
